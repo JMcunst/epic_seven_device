@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final formKey = new GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
 
   String? _email;
   String? _password;
@@ -23,34 +25,34 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('login demo'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('login demo'),
       ),
-      body: new Container(
-        padding: EdgeInsets.all(16),
-        child: new Form(
+      body: Container(
+        padding: const EdgeInsets.all(16),
+        child: Form(
           key: formKey,
-          child: new Column(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              new TextFormField(
-                decoration: new InputDecoration(labelText: 'Email'),
+              TextFormField(
+                decoration: const InputDecoration(labelText: 'Email'),
                 validator: (value) =>
                 value!.isEmpty ? 'Email can\'t be empty' : null,
                 onSaved: (value) => _email = value,
               ),
-              new TextFormField(
+              TextFormField(
                 obscureText: true,
-                decoration: new InputDecoration(labelText: 'Password'),
+                decoration: const InputDecoration(labelText: 'Password'),
                 validator: (value) =>
                 value!.isEmpty ? 'Password can\'t be empty' : null,
                 onSaved: (value) => _password = value,
               ),
-              new ElevatedButton(
-                child: new Text(
+              ElevatedButton(
+                child: const Text(
                   'Login',
-                  style: new TextStyle(fontSize: 20.0),
+                  style: TextStyle(fontSize: 20.0),
                 ),
                 onPressed: validateAndSave,
               ),
