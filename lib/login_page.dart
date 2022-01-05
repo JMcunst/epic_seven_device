@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'main_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -9,7 +10,6 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final formKey = GlobalKey<FormState>();
-  final myController = TextEditingController();
 
   String? _email;
   String? _password;
@@ -19,27 +19,31 @@ class _LoginPageState extends State<LoginPage> {
     if (form!.validate()) {
       form.save();
       print('Form is valid Email: $_email, password: $_password');
+      Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const MainPage())
+      );
     } else {
       print('Form is invalid Email: $_email, password: $_password');
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          // return object of type Dialog
+          return AlertDialog(
+            title: const Text("Login failed"),
+            content: const Text("이메일과 비밀번호 null"),
+            actions: <Widget>[
+              ElevatedButton(
+                child: const Text("Close"),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          );
+        },
+      );
     }
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        // return object of type Dialog
-        return AlertDialog(
-          title: const Text("Alert Dialog title"),
-          content: const Text("Alert Dialog body"),
-          actions: <Widget>[
-            ElevatedButton(
-              child: const Text("Close"),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        );
-      },
-    );
   }
 
   @override
