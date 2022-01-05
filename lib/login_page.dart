@@ -9,6 +9,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final formKey = GlobalKey<FormState>();
+  final myController = TextEditingController();
 
   String? _email;
   String? _password;
@@ -21,6 +22,24 @@ class _LoginPageState extends State<LoginPage> {
     } else {
       print('Form is invalid Email: $_email, password: $_password');
     }
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          title: const Text("Alert Dialog title"),
+          content: const Text("Alert Dialog body"),
+          actions: <Widget>[
+            ElevatedButton(
+              child: const Text("Close"),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
