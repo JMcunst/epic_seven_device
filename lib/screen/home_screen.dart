@@ -1,5 +1,7 @@
 import 'package:epic_seven_device/model/model_movie.dart';
+import 'package:epic_seven_device/widget/box_slider.dart';
 import 'package:epic_seven_device/widget/carousel_slider.dart';
+import 'package:epic_seven_device/widget/circle_slider.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -48,7 +50,9 @@ class _HomeScreenState extends State<HomeScreen> {
             CarouselImage(movies: movies),
             TopBar(),
           ],
-        )
+        ),
+        CircleSlider(movies: movies),
+        BoxSlider(movies: movies),
       ],
     );
   }

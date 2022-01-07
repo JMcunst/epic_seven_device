@@ -40,6 +40,7 @@ class _CarouselImageState extends State<CarouselImage> {
             items: images,
             options: CarouselOptions(onPageChanged: (index, reason) {
               setState(() {
+                print('page changed');
                 _currentPage = index;
                 _currentKeyword = keywords![_currentPage];
               });
