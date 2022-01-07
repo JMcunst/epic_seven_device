@@ -1,3 +1,4 @@
+import 'package:epic_seven_device/screen/home_screen.dart';
 import 'package:epic_seven_device/widget/bottom_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -31,11 +32,7 @@ class _MyAppState extends State<MyApp> {
           body: TabBarView(
             physics: const NeverScrollableScrollPhysics(),
             children: [
-              Container(
-                child: const Center(
-                  child: Text('home'),
-                ),
-              ),
+              HomeScreen(),
               Container(
                 child: const Center(
                   child: Text('search'),
