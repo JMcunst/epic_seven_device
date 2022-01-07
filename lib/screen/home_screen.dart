@@ -1,4 +1,5 @@
 import 'package:epic_seven_device/model/model_movie.dart';
+import 'package:epic_seven_device/widget/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,6 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
       'like': false
     })
   ];
+
   @override
   void initState() {
     super.initState();
@@ -21,9 +23,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return TopBar();
+    return ListView(
+      children: <Widget>[
+        Stack(
+          children: <Widget>[
+            CarouselImage(movies: movies),
+            TopBar(),
+          ],
+        )
+      ],
+    );
   }
-
 }
 
 class TopBar extends StatelessWidget {
@@ -35,7 +45,10 @@ class TopBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Image.asset(
-            'images/nflix_logo.png', fit: BoxFit.contain, height: 25,),
+            'images/nflix_logo.png',
+            fit: BoxFit.contain,
+            height: 25,
+          ),
           Container(
             padding: EdgeInsets.only(right: 1),
             child: const Text(
@@ -61,5 +74,4 @@ class TopBar extends StatelessWidget {
       ),
     );
   }
-
 }

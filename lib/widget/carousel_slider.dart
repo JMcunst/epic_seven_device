@@ -44,6 +44,9 @@ class _CarouselImageState extends State<CarouselImage> {
               });
             }),
           ),
+          Container(
+            child: Text(_currentKeyword!),
+          ),
         ],
       ),
     );
