@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 class CarouselImage extends StatefulWidget {
   final List<Movie>? movies;
 
-  CarouselImage({this.movies});// constructor
+  CarouselImage({this.movies}); // constructor
+  @override
   _CarouselImageState createState() => _CarouselImageState();
 }
 
@@ -33,7 +34,7 @@ class _CarouselImageState extends State<CarouselImage> {
       child: Column(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
           ),
           CarouselSlider(
             items: images,
@@ -45,8 +46,70 @@ class _CarouselImageState extends State<CarouselImage> {
             }),
           ),
           Container(
-            child: Text(_currentKeyword!),
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 3),
+            child: Text(
+              _currentKeyword!,
+              style: const TextStyle(fontSize: 11),
+            ),
           ),
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Container(
+                  child: Column(
+                    children: <Widget>[
+                      likes![_currentPage]
+                          ? IconButton(
+                              onPressed: () {}, icon: const Icon(Icons.check))
+                          : IconButton(
+                              onPressed: () {}, icon: const Icon(Icons.add)),
+                      const Text(
+                        '내가 찜한 컨텐츠',
+                        style: TextStyle(fontSize: 11),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(right: 10),
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.white,
+                    ),
+                    onPressed: () {},
+                    child: Row(
+                      children: const <Widget>[
+                        Icon(
+                          Icons.play_arrow,
+                          color: Colors.black,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(3),
+                        ),
+                        Text(
+                          '재생',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(right: 10),
+                  child: Column(
+                    children: <Widget>[
+                      IconButton(onPressed: () {}, icon: const Icon(Icons.info)),
+                      const Text(
+                        '정보',
+                        style: TextStyle(fontSize: 11),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
