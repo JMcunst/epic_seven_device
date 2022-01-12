@@ -39,6 +39,8 @@ class _SearchScreenState extends State<SearchScreen> {
     }
     return Expanded(
       child: GridView.count(
+        mainAxisSpacing: 0.1,
+        crossAxisSpacing: 4.5,
         crossAxisCount: 3,
         childAspectRatio: 1 / 1.5,
         padding: const EdgeInsets.all(3),
@@ -66,7 +68,7 @@ class _SearchScreenState extends State<SearchScreen> {
     return Container(
       child: Column(
         children: <Widget>[
-          const Padding(padding: EdgeInsets.all(30)),
+          const Padding(padding: EdgeInsets.all(15)),
           Container(
             color: Colors.black,
             padding: const EdgeInsets.fromLTRB(5, 10, 5, 10),

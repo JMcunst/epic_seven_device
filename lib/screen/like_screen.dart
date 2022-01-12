@@ -27,6 +27,7 @@ class _LikeScreenState extends State<LikeScreen> {
       List<DocumentSnapshot<Map<String, dynamic>>> snapshot) {
     return Expanded(
       child: GridView.count(
+        crossAxisSpacing: 4.5,
         crossAxisCount: 3,
         childAspectRatio: 1 / 1.5,
         padding: const EdgeInsets.all(3),
@@ -55,6 +56,7 @@ class _LikeScreenState extends State<LikeScreen> {
     return Container(
       child: Column(
         children: <Widget>[
+          const Padding(padding: EdgeInsets.all(10)),
           Container(
             padding: const EdgeInsets.fromLTRB(20, 27, 20, 7),
             child: Row(
