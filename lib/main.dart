@@ -1,4 +1,5 @@
 import 'package:epic_seven_device/screen/home_screen.dart';
+import 'package:epic_seven_device/screen/like_screen.dart';
 import 'package:epic_seven_device/screen/more_screen.dart';
 import 'package:epic_seven_device/screen/search_screen.dart';
 import 'package:epic_seven_device/widget/bottom_bar.dart';
@@ -39,11 +40,7 @@ class _MyAppState extends State<MyApp> {
             children: [
               HomeScreen(),
               SearchScreen(),
-              Container(
-                child: const Center(
-                  child: Text('save'),
-                ),
-              ),
+              LikeScreen(),
               MoreScreen()
             ],
           ),
