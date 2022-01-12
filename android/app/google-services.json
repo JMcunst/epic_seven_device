@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "728528685296",
+    "project_id": "nflix-clone-test",
+    "storage_bucket": "nflix-clone-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728528685296:android:4344f469fe22b009715a35",
+        "android_client_info": {
+          "package_name": "com.example.epic_seven_device"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "728528685296-kg9e89ekuqekbrjr6pl7pnhvjno8b2ee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOdE71UM6CzYwGPsGu_oc71VUnABRYyIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728528685296-kg9e89ekuqekbrjr6pl7pnhvjno8b2ee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
