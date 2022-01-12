@@ -1,5 +1,6 @@
 import 'package:epic_seven_device/screen/home_screen.dart';
 import 'package:epic_seven_device/screen/more_screen.dart';
+import 'package:epic_seven_device/screen/search_screen.dart';
 import 'package:epic_seven_device/widget/bottom_bar.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
@@ -37,11 +38,7 @@ class _MyAppState extends State<MyApp> {
             physics: const NeverScrollableScrollPhysics(),
             children: [
               HomeScreen(),
-              Container(
-                child: const Center(
-                  child: Text('search'),
-                ),
-              ),
+              SearchScreen(),
               Container(
                 child: const Center(
                   child: Text('save'),
