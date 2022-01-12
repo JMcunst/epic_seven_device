@@ -64,9 +64,25 @@ class _CarouselImageState extends State<CarouselImage> {
                     children: <Widget>[
                       likes![_currentPage]
                           ? IconButton(
-                              onPressed: () {}, icon: const Icon(Icons.check))
+                              onPressed: () {
+                                setState(() {
+                                  likes![_currentPage] = !likes![_currentPage];
+                                  movies![_currentPage]
+                                      .reference
+                                      .update({'like': likes![_currentPage]});
+                                });
+                              },
+                              icon: const Icon(Icons.check))
                           : IconButton(
-                              onPressed: () {}, icon: const Icon(Icons.add)),
+                              onPressed: () {
+                                setState(() {
+                                  likes![_currentPage] = !likes![_currentPage];
+                                  movies![_currentPage]
+                                      .reference
+                                      .update({'like': likes![_currentPage]});
+                                });
+                              },
+                              icon: const Icon(Icons.add)),
                       const Text(
                         '내가 찜한 컨텐츠',
                         style: TextStyle(fontSize: 11),

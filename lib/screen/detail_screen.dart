@@ -123,11 +123,14 @@ class _DetailScreenState extends State<DetailScreen> {
                     Container(
                       padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {setState(() {
+                          like = !like;
+                          widget.movie?.reference.update({'like': like});
+                        });},
                         child: Column(
                           children: <Widget>[
-                            like ? Icon(Icons.check) : Icon(Icons.add),
-                            Padding(padding: EdgeInsets.all(5)),
+                            like ? Icon(Icons.check) : const Icon(Icons.add),
+                            const Padding(padding: EdgeInsets.all(5)),
                             const Text(
                               '내가 찜한 컨텐츠',
                               style: TextStyle(
